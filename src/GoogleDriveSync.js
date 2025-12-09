@@ -7,7 +7,7 @@ export function GoogleDriveSync({ projectId, onSync, compact = false }) {
   const [folders, setFolders] = useState([]);
   const [selectedFolder, setSelectedFolder] = useState('');
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null);3
+  const [status, setStatus] = useState(null);
 
   const loadFolders = useCallback(async () => {
     try {
