@@ -7,7 +7,7 @@ import MessageInput from './components/MessageInput';
 import GoogleDriveSync from './GoogleDriveSync';
 
 // URL base da API
-const API_BASE_URL = 'https://web-production-a2c28.up.railway.app/';
+const API_BASE_URL = 'https://web-production-a2c28.up.railway.app';
 
 function App() {
   const [projectId, setProjectId] = useState('');

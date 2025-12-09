@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const API_BASE = 'https://web-production-a2c28.up.railway.app/';
+const API_BASE = 'https://web-production-a2c28.up.railway.app';
 
 export function GoogleDriveSync({ projectId, onSync, compact = false }) {
   const [authenticated, setAuthenticated] = useState(false);
