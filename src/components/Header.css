@@ -1,0 +1,114 @@
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bendito-brand {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-title h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.header-title p {
+  font-size: 0.875rem;
+  color: #666666;
+  font-weight: 400;
+}
+
+.gdrive-status {
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #f8f9fa;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666666;
+  transition: all 0.2s ease;
+}
+
+.gdrive-status.connected {
+  background: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.gdrive-icon {
+  font-size: 0.875rem;
+}
+
+.quick-actions {
+  /* display: flex; */
+  display: none;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quick-action {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quick-action:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+  background: #f8f9fa;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .header-title h1 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", -apple-system, system-ui, sans-serif;
+  background: #fafafa;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 0;
+}
+
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  position: static;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chat-header h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+/* Compact Google Drive controls */
+.gdrive-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gdrive-folder-select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.btn-primary,
+.btn-sync {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.btn-primary:disabled,
+.btn-sync:disabled,
+.gdrive-folder-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.project-input {
+  margin-top: 10px;
+}
+
+.project-input input {
+  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.message {
+  padding: 10px 15px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.briefing-content {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.briefing-content pre {
+  white-space: pre-wrap;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.timestamp {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.file-chip {
+  background: #e8eaf6;
+  color: #5c6bc0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-chip button {
+  background: none;
+  border: none;
+  color: #5c6bc0;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.file-chip button:hover {
+  color: #3949ab;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-row input[type="text"] {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid #eee;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-row input[type="text"]:focus {
+  border-color: #667eea;
+}
+
+.attach-btn,
+.send-btn {
+  width: 48px;
+  height: auto;
+  min-height: 48px;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.attach-btn {
+  background: #f5f5f5;
+}
+
+.attach-btn:hover:not(:disabled) {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.send-btn {
+  background: #000000;
+  color: white;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.send-btn:disabled,
+.attach-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Scrollbar customizada */
+.messages-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}
+
+/* Painel de validação */
+.validation-panel {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+  animation: slideIn 0.5s ease-out;
+}
+
+.validation-panel h3 {
+  color: #856404;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.validation-panel>p {
+  color: #856404;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.validation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-correct {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-correct:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-correct:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.corrections-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.corrections-section textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ffc107;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.corrections-section textarea:focus {
+  border-color: #ff9800;
+}
+
+.corrections-section textarea:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.btn-incorrect {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.btn-incorrect:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+.btn-incorrect:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.validation-prompt {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-left: 4px solid #ffc107;
+  font-weight: 600;
+}
