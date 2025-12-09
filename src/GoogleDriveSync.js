@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const API_BASE = 'https://eyxo-ai.up.railway.app';
+const API_BASE = 'https://web-production-a2c28.up.railway.app/';
 
 export function GoogleDriveSync({ projectId, onSync, compact = false }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [folders, setFolders] = useState([]);
   const [selectedFolder, setSelectedFolder] = useState('');
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState(null);3
 
   const loadFolders = useCallback(async () => {
     try {

@@ -7,7 +7,7 @@ import MessageInput from './components/MessageInput';
 import GoogleDriveSync from './GoogleDriveSync';
 
 // URL base da API
-const API_BASE_URL = 'https://eyxo-ai.up.railway.app/api';
+const API_BASE_URL = 'https://web-production-a2c28.up.railway.app/';
 
 function App() {
   const [projectId, setProjectId] = useState('');
@@ -60,7 +60,7 @@ function App() {
   // Verificar status de autenticação do Google Drive
   const checkGDriveStatus = async () => {
     try {
-      const response = await fetch('https://eyxo-ai.up.railway.app/gdrive/status');
+      const response = await fetch('https://web-production-a2c28.up.railway.app/gdrive/status');
       const data = await response.json();
 
       setGdriveAuthenticated(data.authenticated);
@@ -144,7 +144,7 @@ function App() {
     addMessage("Abrindo janela de autorização...", "assistant");
 
     try {
-      const response = await fetch('https://eyxo-ai.up.railway.app/gdrive/auth-url');
+      const response = await fetch('https://web-production-a2c28.up.railway.app/gdrive/auth-url');
       const data = await response.json();
 
       if (data.auth_url) {
@@ -211,7 +211,7 @@ function App() {
     addMessage("Carregando pastas do Google Drive...", "assistant");
 
     try {
-      const response = await fetch('https://eyxo-ai.up.railway.app/gdrive/folders?user_id=default');
+      const response = await fetch('https://web-production-a2c28.up.railway.app/gdrive/folders?user_id=default');
       const data = await response.json();
 
       if (data.success && data.folders.length > 0) {
@@ -263,7 +263,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "https://eyxo-ai.up.railway.app/gdrive/sync-memory",
+        "https://web-production-a2c28.up.railway.app/gdrive/sync-memory",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
